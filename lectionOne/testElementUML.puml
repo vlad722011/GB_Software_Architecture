@@ -1,0 +1,51 @@
+@startuml
+' Основной класс с методом main
+class testElement.Main {
+    + {static} void main(String[])
+}
+
+' Интерфейс Drivable с методом drive
+interface testElement.Drivable {
+    ~ void drive()
+}
+
+' Абстрактный класс Vehicle с атрибутом make и абстрактным методом start
+abstract class testElement.Vehicle {
+    ~ String make
+    ~ {abstract} void start()
+}
+
+' Перечисление FuelType с различными видами топлива
+enum testElement.FuelType {
+    +  PETROL
+    +  DIESEL
+    +  ELECTRIC
+}
+
+' Класс ElectricCar с атрибутами и методами, относящимися к электрокарам
+class testElement.ElectricCar {
+    ~ int batteryLife
+    ~ void charge()
+    ~ void start()
+}
+
+' Класс Car с различными атрибутами и методами
+class testElement.Car {
+    ~ FuelType fuelType
+    - int speed
+    + String color
+    + void accelerate()
+    + void brake()
+    + void drive()
+    ~ void start()
+}
+
+' ElectricCar наследует от Car
+testElement.Car <|-- testElement.ElectricCar
+
+' Car реализует интерфейс Drivable
+testElement.Drivable <|.. testElement.Car
+
+' Car наследует от абстрактного класса Vehicle
+testElement.Vehicle <|-- testElement.Car
+@enduml

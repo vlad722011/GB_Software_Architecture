@@ -1,0 +1,55 @@
+@startuml
+
+' Основной класс с методом main
+class testConnection.Main {
+    + {static} void main(String[])
+}
+
+' Абстрактный класс Animal с методом breathe
+abstract class testConnection.Animal {
+    ~ void breathe()
+}
+
+' Интерфейс Eatable с методом eat
+interface testConnection.Eatable {
+    ~ void eat()
+}
+
+' Класс Mammal наследует от Animal
+class testConnection.Mammal {
+}
+
+' Класс Human, наследует от Mammal и реализует интерфейс Eatable
+class testConnection.Human {
+    ~ Cat petCat
+    + void eat()
+    ~ void ownCat(Cat)
+}
+
+' Класс Cat с методом meow
+class testConnection.Cat {
+    ~ void meow()
+}
+
+' Класс House с атрибутом room типа Room
+class testConnection.House {
+    ~ Room room
+}
+
+' Класс Room с методом description
+class testConnection.Room {
+    ~ void description()
+}
+
+' Mammal наследует от Animal
+testConnection.Animal <|-- testConnection.Mammal
+
+' Human реализует интерфейс Eatable
+testConnection.Eatable <|.. testConnection.Human
+
+' Human наследует от Mammal
+testConnection.Mammal <|-- testConnection.Human
+
+' (Здесь могут быть описания связей, но в вашем примере связи не заданы)
+
+@enduml

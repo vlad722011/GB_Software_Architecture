@@ -1,0 +1,114 @@
+@startuml
+abstract class test.testConnectionTwo.Animal {
+~ void breathe()
+}
+interface test.testConnectionTwo.Eatable {
+~ void eat()
+}
+class test.testConnectionTwo.Mammal {
+}
+class test.testConnectionTwo.Human {
+~ Cat petCat
++ void eat()
+~ void ownCat(Cat)
+}
+class test.testConnectionTwo.Cat {
+~ void meow()
+}
+class test.testConnectionTwo.House {
+~ Room room
+}
+class test.testConnectionTwo.Room {
+~ void description()
+}
+class test.testConnectionTwo.Main {
++ {static} void main(String[])
+}
+interface test.testElement.Drivable {
+~ void drive()
+}
+abstract class test.testElement.Vehicle {
+~ String make
+~ {abstract}void start()
+}
+enum test.testElement.FuelType {
++  PETROL
++  DIESEL
++  ELECTRIC
+}
+class test.testElement.ElectricCar {
+~ int batteryLife
+~ void charge()
+~ void start()
+}
+class test.testElement.Main {
++ {static} void main(String[])
+}
+interface test.additionalInformation.Payable {
+~ void payTuition()
+}
+class test.additionalInformation.CollegeStudent {
+~ String collegeName
++ void payTuition()
+}
+class test.additionalInformation.Main {
++ {static} void main(String[])
+}
+abstract class test.testConnection.Animal {
+~ void breathe()
+}
+interface test.testConnection.Eatable {
+~ void eat()
+}
+class test.testConnection.Mammal {
+}
+class test.testConnection.Human {
+~ Cat petCat
++ void eat()
+~ void ownCat(Cat)
+}
+class test.testConnection.Cat {
+~ void meow()
+}
+class test.testConnection.House {
+~ Room room
+}
+class test.testConnection.Room {
+~ void description()
+}
+class test.testConnection.Main {
++ {static} void main(String[])
+}
+class test.testElement.Car {
+~ FuelType fuelType
+- int speed
++ String color
++ void accelerate()
++ void brake()
++ void drive()
+~ void start()
+}
+class test.additionalInformation.Student {
+- String name
++ int age
+# String id
++ void study()
+# void takeExam()
+- void sleep()
++ {static} void staticMethod()
++ String toString()
+}
+
+
+test.testConnectionTwo.Animal <|-- test.testConnectionTwo.Mammal
+test.testConnectionTwo.Eatable <|.. test.testConnectionTwo.Human
+test.testConnectionTwo.Mammal <|-- test.testConnectionTwo.Human
+test.testElement.Car <|-- test.testElement.ElectricCar
+test.additionalInformation.Payable <|.. test.additionalInformation.CollegeStudent
+test.additionalInformation.Student <|-- test.additionalInformation.CollegeStudent
+test.testConnection.Animal <|-- test.testConnection.Mammal
+test.testConnection.Eatable <|.. test.testConnection.Human
+test.testConnection.Mammal <|-- test.testConnection.Human
+test.testElement.Drivable <|.. test.testElement.Car
+test.testElement.Vehicle <|-- test.testElement.Car
+@enduml

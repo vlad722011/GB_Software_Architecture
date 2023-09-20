@@ -1,0 +1,44 @@
+@startuml
+!define RECTANGLE class
+
+RECTANGLE Animal {
+    {abstract} void breathe()
+}
+
+interface Eatable {
+    void eat()
+}
+
+RECTANGLE Mammal {
+    --
+}
+Animal <|-- Mammal
+
+RECTANGLE Human {
+    Cat petCat
+    void eat()
+    void ownCat(Cat)
+}
+Mammal <|-- Human
+Eatable <|.. Human
+
+RECTANGLE Cat {
+    void meow()
+}
+Human "1" o-- "0..1" Cat : has >
+
+RECTANGLE House {
+    Room room
+}
+RECTANGLE Room {
+    void description()
+}
+House "1" *-- "1" Room : owns >
+
+RECTANGLE Main {
+    {static} void main(String[])
+}
+Main ..> Human : uses >
+Main ..> Cat : uses >
+
+@enduml

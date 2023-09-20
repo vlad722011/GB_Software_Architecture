@@ -1,0 +1,51 @@
+    @startuml
+
+    ' Класс Student с различными типами полей и методов
+    class additionalInformation.Student {
+        - String name
+        ' Приватное поле name
+        + int age
+        ' Публичное поле age
+        # String id
+        ' Защищенное поле id
+        + void study()
+        ' Публичный метод study
+        # void takeExam()
+        ' Защищенный метод takeExam
+        - void sleep()
+        ' Приватный метод sleep
+        + {static} void staticMethod()
+        ' Статический метод
+        + String toString()
+        ' Публичный метод toString
+    }
+
+    ' Интерфейс Payable с методом payTuition
+    interface additionalInformation.Payable {
+        ~ void payTuition()
+        ' Пакетный метод payTuition
+    }
+
+    ' Класс CollegeStudent, уточняющий класс Student
+    class additionalInformation.CollegeStudent {
+        ~ String collegeName
+        ' Пакетное поле collegeName
+        + void payTuition()
+        ' Публичный метод payTuition
+    }
+
+    ' Основной класс с методом main
+    class additionalInformation.Main {
+        + {static} void main(String[])
+        ' Статический метод main
+    }
+
+    ' CollegeStudent реализует интерфейс Payable
+    additionalInformation.Payable <|.. additionalInformation.CollegeStudent
+    ' (CollegeStudent реализует метод payTuition из интерфейса Payable)
+
+    ' CollegeStudent наследует от Student
+    additionalInformation.Student <|-- additionalInformation.CollegeStudent
+    ' (CollegeStudent унаследует поля и методы класса Student)
+
+    @enduml
