@@ -1,4 +1,4 @@
-package ulmExample;
+package umlExample;
 
 // Класс для Model
 class CalculatorModel {

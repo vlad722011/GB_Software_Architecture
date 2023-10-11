@@ -1,4 +1,4 @@
-package ulmExample;
+package umlExample;
 
 // Главный класс программы
 public class MainProgram {

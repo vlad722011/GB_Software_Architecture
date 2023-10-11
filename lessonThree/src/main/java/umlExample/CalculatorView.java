@@ -1,6 +1,4 @@
-package ulmExample;
-
-import java.util.Observer;
+package umlExample;
 
 // Интерфейс для View
 interface CalculatorView {

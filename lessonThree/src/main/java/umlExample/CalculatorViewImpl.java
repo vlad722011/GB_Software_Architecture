@@ -1,4 +1,4 @@
-package ulmExample;
+package umlExample;
 
 // Реализация CalculatorView
 class CalculatorViewImpl implements CalculatorView {

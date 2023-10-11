@@ -1,4 +1,4 @@
-package ulmExample;
+package umlExample;
 
 // Класс для Presenter
 public class CalculatorPresenter implements ViewObserver {

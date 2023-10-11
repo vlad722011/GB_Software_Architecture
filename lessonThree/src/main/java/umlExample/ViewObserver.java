@@ -1,4 +1,4 @@
-package ulmExample;
+package umlExample;
 
 // Интерфейс для Observer
 interface ViewObserver {
