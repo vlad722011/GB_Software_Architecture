@@ -18,18 +18,13 @@ public class Main {
                 circuitBreaker.setOpen(true);
                 if (circuitBreaker.getFailureCount() == 3) {
                     circuitBreaker.reset();
-                    String userInfo = userService.getUserInfo(userID);
-                    System.out.println(userInfo);
                 } else {
-                    String userInfo = userService.getUserInfo(userID);
-                    System.out.println(userInfo);
                     userService.reportFailure();
                     circuitBreaker.setFailureCount(circuitBreaker.getFailureCount());
                 }
-            } else {
-                String userInfo = userService.getUserInfo(userID);
-                System.out.println(userInfo);
             }
+            String userInfo = userService.getUserInfo(userID);
+            System.out.println(userInfo);
         }
         System.out.println("_________________________________________________________");
         System.out.println();
